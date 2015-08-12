@@ -1,0 +1,13 @@
+<ion-popover-view>
+    <ion-content>
+        <div class="list">
+            
+            <ion-radio ng-repeat="color in colors" ng-model="choice" ng-value="color.name" ng-change="selectedColorButton(color.hex)" >
+                {{ color.name }}
+                <div class="color-demo" style="background:{{color.hex}}"></div>
+            </ion-radio>
+            
+            
+        </div>
+    </ion-content>
+</ion-popover-view>

@@ -1,1 +1,31 @@
 /* Empty. Add your own CSS if you like */
+.tabs{
+    display:none;
+}
+.color-demo {
+    float: right;
+    width: 20px;
+    height: 20px;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.custom-icon {
+    color : #e8f0e9;
+}
+
+label{
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #387ef5;
+    padding: 0 6px;
+    max-height: 42px;
+    
+}
+.wide-as-needed{
+    overflow: scroll;
+    white-space: nowrap;
+    width:100%;
+}

@@ -1,0 +1,40 @@
+<ion-popover-view>
+    <ion-content>
+      
+
+        <form name="userForm" novalidate>
+            
+            <!-- name field -->
+            <div class="form-group">
+                <div class="item item-input-inset">
+                     <label class="item-input-wrapper">
+                        <input type="text" name="name" class="form-control" ng-model="paintActivity.name" ng-minlength="3"
+                            ng-maxlength="15" required>
+                    </label>
+                     <button class="button button-small" ng-disabled="userForm.$invalid" ng-click="changeTitle()">
+                         Done
+                     </button>
+                 </div>
+                    
+                    <!-- ngMessages goes here -->
+                    <div class="help-block" ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+                        <p ng-message="minlength">Title is too short.</p>
+                        <p ng-message="maxlength">Title is too long.</p>
+                        <p ng-message="required">Title is required.</p>
+                    </div>
+            </div>
+        </form>
+
+
+
+    </ion-content>
+</ion-popover-view>
+
+
+
+<!--             <label class="item-input-wrapper">-->
+<!--                 <input type="text" placeholder="{{sign.name}}" ng-model="sign.name" required>-->
+<!--                     </label>-->
+<!--             <button class="button button-small" ng-click="changeTitle()">-->
+<!--                 Done-->
+<!--             </button>-->

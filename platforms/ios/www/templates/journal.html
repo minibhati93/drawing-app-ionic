@@ -1,0 +1,40 @@
+<ion-modal-view>
+  <ion-header-bar>
+     
+    <h1 class="title"></h1>
+    <div class="buttons">
+      <button class="button button-clear button-positive" ng-click="closeModal()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+      
+      <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+      <ion-list>
+          <ion-item class="item item-thumbnail-left item-icon-right" ng-repeat="image in images" type="item-text-wrap" ng-click="showActionsheet(image.file)">
+              <img src="{{image.src}}" ng-click="view(image.file)">
+                  
+                  <h2>{{image.file}}</h2>
+                  <i class="icon ion-chevron-right icon-accessory"></i>
+                  
+                  
+                                    
+                  </ion-item>
+      </ion-list>
+
+<!--<div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">-->
+<!--    <div class="col col-25 collection-panel" ng-if="$index < images.length">-->
+<!--        <img ng-src="{{images[$index]}}" width="100%" ng-click="loadImage(images[$index])" />-->
+<!--    </div>-->
+<!--    <div class="col col-25 collection-panel" ng-if="$index + 1 < images.length">-->
+<!--        <img ng-src="{{images[$index + 1]}}" width="100%" ng-click="loadImage(images[$index + 1])"/>-->
+<!--    </div>-->
+<!--    <div class="col col-25 collection-panel" ng-if="$index + 2 < images.length">-->
+<!--        <img ng-src="{{images[$index + 2]}}" width="100%" ng-click="loadImage(images[$index + 2])" />-->
+<!--    </div>-->
+<!--    <div class="col col-25 collection-panel" ng-if="$index + 3 < images.length">-->
+<!--        <img ng-src="{{images[$index + 3]}}" width="100%" ng-click="loadImage(images[$index + 3])" />-->
+<!--    </div>-->
+<!--</div>-->
+
+  </ion-content>
+</ion-modal-view>

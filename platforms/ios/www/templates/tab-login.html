@@ -1,0 +1,41 @@
+<ion-view view-title="">
+
+    <ion-content has-header="true" has-subheader="true" class="padding-top content-margin">
+
+        <form name="userForm" novalidate>
+
+            <!-- name field -->
+            <div class="login-div">
+                <div class="form-group">
+
+                    <div class="list list-inset">
+                        <label class="item item-input">
+                            <input type="email" name="email" placeholder="Email address" ng-model="data.email" required>
+                        </label>
+                        <label class="item item-input">
+                            <input type="password" name="password" placeholder="Password" ng-model="data.password" required ng-minlength="3"
+                                ng-maxlength="15">
+                        </label>
+
+                    <button class="button button-block button-positive" ng-disabled="userForm.$invalid" ng-click="registerUser()">
+                       Sign up
+                    </button>
+                    </div>
+
+                </div>
+
+
+
+                <div class="help-block" ng-messages="userForm.email.$error" ng-if="userForm.email.$touched">
+                    <p ng-message="required">Email is required.</p>
+                    <p ng-message="email">This needs to be a valid email</p>
+                </div>
+                <div class="help-block" ng-messages="userForm.password.$error" ng-if="userForm.password.$touched">
+                    <p ng-message="required">Password is required.</p>
+                    <p ng-message="minlength">Password is too short.</p>
+                    <p ng-message="maxlength">Password is too long.</p>
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

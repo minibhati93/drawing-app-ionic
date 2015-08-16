@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('PaintCtrl', function($scope, $ionicPopover, DrawService, $ionicModal, $ionicActionSheet, $timeout) {
+.controller('PaintCtrl', function($scope, $ionicPopover, DrawService, $ionicModal, $ionicActionSheet, $timeout, $cordovaCapture, $ionicPlatform, $cordovaCapture) {
             
             $scope.paint = { name : "Paint Activity" };
             $scope.tools = { strokeSize : '20' , strokeColor: '#000000'};
@@ -420,11 +420,70 @@ angular.module('starter.controllers', [])
                                    }
                                    });
             };
+            
+            
+            $scope.startRecording = function(){
+            
+            
+            $ionicPlatform.ready(function() {
+                                 
+                 var options = { limit: 3, duration: 10 };
+                                 
+                 $cordovaCapture.captureAudio(options).then(function(audioData) {
+                        // Success! Audio data is here
+                        console.log(JSON.stringify(audioData));
+                        var src = audioData[0].fullPath;
+                        playAudio(src);
+                
+                        }, function(err) {
+                        // An error occurred. Show a message to the user
+                 });
+                                 
+            });
+            
+            };
+            
+            
+            $scope.startVideo = function() {
+                        var options = { limit: 3, duration: 15 };
+            
+                        $ionicPlatform.ready(function() {
+                                 
+                                 $cordovaCapture.captureVideo(options).then(function(videoData) {
+                                            // Success! Video data is here
+                                            console.log(JSON.stringify(videoData));
+                                            var src = videoData[0].fullPath;
+                                                                            
+                                            }, function(err) {
+                                            // An error occurred. Show a message to the user
+                                            });
+
+                                 
+                                 });
+            
+            };
 
 
 
 
             
 
+            
+})
+
+.controller('LoginCtrl', function($scope, s3Service){
+            
+            
+            $scope.data= {};
+            
+            $scope.registerUser = function(){
+            
+            alert($scope.data.email);
+            alert($scope.data.password);
+            
+            };
+            
+            
+            
             
 });

@@ -29,3 +29,9 @@ label{
     white-space: nowrap;
     width:100%;
 }
+.login-div{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:30px;
+    width:70%;
+}

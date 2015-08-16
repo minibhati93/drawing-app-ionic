@@ -10,4 +10,16 @@ angular.module('starter.services', [])
          return signatures;
     }
   };
+})
+.factory('s3Service', function($http){
+         
+         return{
+         
+         connection:function(){
+         alert("connection function..");
+         
+         return $http.get("http://aspiringapps.com:8888/uploadImage");
+         }
+         };
+         
 });
